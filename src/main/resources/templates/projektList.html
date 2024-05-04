@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista projektów</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link th:href="@{/css/list-style.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1>Lista projektów</h1>
+    <table class="projekt-table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nazwa</th>
+            <th>Opis</th>
+            <th>Data utworzenia</th>
+            <th>Data modyfikacji</th>
+            <th>Akcje</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="projekt : ${projekty}">
+            <td th:text="${projekt.projektId}"></td>
+            <td th:text="${projekt.nazwa}"></td>
+            <td th:text="${projekt.opis}"></td>
+            <td th:text="${projekt.dataCzasUtworzenia}"></td>
+            <td th:text="${projekt.dataCzasModyfikacji}"></td>
+            <td>
+                <a th:href="@{/projektEdit(projektId=${projekt.projektId})}" class="edit-link">Edytuj</a>
+                <form th:action="@{/projektEdit}" method="POST">
+                    <input type="hidden" name="projektId" th:value="${projekt.projektId}" />
+                    <button type="submit" name="delete" class="delete-button">Usuń</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

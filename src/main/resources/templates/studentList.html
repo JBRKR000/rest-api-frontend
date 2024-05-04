@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student List</title>
+</head>
+<body>
+<h1>Student List</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Imię</th>
+        <th>Nazwisko</th>
+        <th>Numer Indeksu</th>
+        <th>Email</th>
+        <th>Stacjonarny</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Loop through students -->
+    <tr th:each="student : ${studenci}">
+        <td th:text="${student.imie}"></td>
+        <td th:text="${student.nazwisko}"></td>
+        <td th:text="${student.nrIndeksu}"></td>
+        <td th:text="${student.email}"></td>
+        <td th:text="${student.stacjonarny} ? 'Yes' : 'No'"></td>
+        <td>
+            <a th:href="@{/studentEdit(studentId=${student.studentId})}">Edit</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a href="/studentEdit">Add Student</a>
+</body>
+</html>

@@ -1,0 +1,62 @@
+.root {
+    text-align: center;
+}
+
+.container {
+    text-align: left;
+    display: inline-block;
+    max-width: 600px; /* Adjust the max-width as needed */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add some padding */
+}
+
+.fld {
+    padding: 10px;
+    margin: 5px;
+    width: 100%; /* Fill the width of the container */
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+.btn {
+    padding: 10px 20px;
+    margin: 10px 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btns-panel {
+    border: 1px solid #333;
+    background: #f4f4f4;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.lbl {
+    display: block;
+    margin: 10px 5px 0;
+    font-weight: bold;
+}
+
+span.err, label.err {
+    color: red;
+}
+
+div.err {
+    background-color: #ffcccc;
+    border: 2px solid red;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+textarea.err {
+    background-color: #ffcccc;
+    padding: 10px;
+    margin: 5px;
+    width: calc(100% - 10px); /* Subtract the margin from the width */
+    box-sizing: border-box; /* Include padding and border in width */
+}
